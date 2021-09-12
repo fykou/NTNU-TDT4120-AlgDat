@@ -3,7 +3,7 @@
 
 * Repo: https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/
 
-* PDF download: https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Readme.pdf
+* PDF download: https://github.com/Hoyby/NTNU/raw/master/TDT4120-AlgDat/README.pdf
 
 ## Teori
 1. [*Problem og algoritmer*](#of1)
