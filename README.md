@@ -1,9 +1,9 @@
-# Algoritmer og datastrukturer - TDT 4120
+# TDT 4120 - Algoritmer og datastrukturer
 <meta name="author" content="Alex Høyby">
 
-*  Repo: https://github.com/Hoyby/AlgDat-TDT4120
+* Repo: https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/
 
-* PDF download: https://github.com/Hoyby/AlgDat-TDT4120/raw/master/Readme.pdf
+* PDF download: https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Readme.pdf
 
 ## Teori
 1. [*Problem og algoritmer*](#of1)
@@ -22,22 +22,21 @@
 14. [*NP-komplette problemer*](#of14)
 
 
-* [Her](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Algoritmer%20i%20pensum) ligger de fleste av algoritmene som er pensum skrevet i *Python*
+* [Her](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Algoritmer%20i%20pensum) ligger de fleste av algoritmene som er pensum skrevet i *Python*
+
+* [Her](https://github.com/Hoyby/NTNU/blob/master/TDT4120-AlgDat/Algorithms.md) ligger kjøretiden på de fleste av algoritmene nevnt i dette dokumentet.
 
 ## Liste over øvinger:
 
-- [x] [Øving 1](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_1)
-- [x] [Øving 2](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_2)
-- [x] [Øving 3](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_3)
-- [x] [Øving 4](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_4)
-- [x] [Øving 5](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_5)
-- [x] [Øving 6](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_6)
-- [x] [Øving 7](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_7)
-- [x] [Øving 8](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_8)
-- [x] [Øving 9](https://github.com/Hoyby/AlgDat-TDT4120/tree/master/Øving_9)
-- [ ] [Øving 10]()
-- [ ] [Øving 11]()
-- [ ] [Øving 12]()
+- [x] [Øving 1](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_1)
+- [x] [Øving 2](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_2)
+- [x] [Øving 3](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_3)
+- [x] [Øving 4](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_4)
+- [x] [Øving 5](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_5)
+- [x] [Øving 6](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_6)
+- [x] [Øving 7](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_7)
+- [x] [Øving 8](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_8)
+- [x] [Øving 9](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_9)
 
 
 </br></br>

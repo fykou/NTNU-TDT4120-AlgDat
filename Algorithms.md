@@ -5,6 +5,7 @@
     * **Stabil**
     * **Ikke** in-place
     * Rutime:
+
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(n log(n)) | Θ(n log(n)) | O(n log(n))
@@ -13,6 +14,7 @@
     * **Ikke** Stabil
     * **in-place**
     * Rutime:
+  
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(n log(n)) | Θ(n log(n)) | O(n<sup>2</sup>)
@@ -21,6 +23,7 @@
     * **Stabil**
     * **in-place**
     * Rutime:
+
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(n) | Θ(n<sup>2</sup>) | O(n<sup>2</sup>)
@@ -40,6 +43,7 @@
     * **Stabil**
     * **Ikke** in-place
     * Rutime:
+
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(n+k) | Θ(n+k) | O(n+k)
@@ -48,6 +52,7 @@
     * **Stabil***
     * **Ikke** in-place
     * Rutime:
+
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(d(n+k)) | Θ(d(n+k)) | O(d(n+k))
@@ -56,6 +61,7 @@
     * **Stabil**
     * **Ikke** in-place
     * Rutime:
+
       Best|Average|Worst
       :-:|:-:|:-:
       Ω(n) | Θ(n) | O(n<sup>2</sup>)
@@ -69,7 +75,7 @@
   * Rutime: O(lg n)
     </br>
 
-
+<!--  
 Huffmann-koder
 BFS
 DFS
@@ -83,3 +89,4 @@ Floyd-Warshall
 Ford-Fulkerson-metoden
 Edmonds-Karp
 johnson's algorithm
+-->
