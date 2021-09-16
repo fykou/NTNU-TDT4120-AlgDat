@@ -28,15 +28,15 @@
 
 ## Liste over øvinger:
 
-- [x] [Øving 1](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_1)
-- [x] [Øving 2](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_2)
-- [x] [Øving 3](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_3)
-- [x] [Øving 4](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_4)
-- [x] [Øving 5](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_5)
-- [x] [Øving 6](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_6)
-- [x] [Øving 7](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_7)
-- [x] [Øving 8](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_8)
-- [x] [Øving 9](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Øving_9)
+- [x] [Øving 1](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_1)
+- [x] [Øving 2](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_2)
+- [x] [Øving 3](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_3)
+- [x] [Øving 4](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_4)
+- [x] [Øving 5](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_5)
+- [x] [Øving 6](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_6)
+- [x] [Øving 7](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_7)
+- [x] [Øving 8](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_8)
+- [x] [Øving 9](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_9)
 
 
 </br></br>
