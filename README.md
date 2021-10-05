@@ -685,7 +685,7 @@ I begge typene tilfredsstiller verdiene i nodene en heap-egenskap, som avhenger 
 	*  For hver node *i* &ne; 0 er `A[parent(i)] ≥ A[i]`
 	*  En nodes verdi er på det meste sin forgjengers verdi - dvs største element ligger i roten.
 * **Min-heaps egenskapen**:
-	* For hver node *i* &ne; 0 er `A[parent(i)] ≥ A[i]` 
+	* For hver node *i* &ne; 0 er `A[parent(i)] ≤ A[i]` 
 	* En nodes verdi er på det minste sin forgjengers verdi - dvs. minste element ligger i roten.
 
 Dersom vi ser på en heap som et tree, definerer vi *høyden* til en node i treet til å den lengste enkle veien fra noden til en løvnode, og vi definer *høyden* til treet til å være høyden til roten.
