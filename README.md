@@ -1,9 +1,9 @@
 # TDT 4120 - Algoritmer og datastrukturer
 <meta name="author" content="Alex Høyby">
 
-* Repo: https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/
+* Repo: https://github.com/Hoyby/NTNU-TDT4120-AlgDat
 
-* PDF download: https://github.com/Hoyby/NTNU/raw/master/TDT4120-AlgDat/README.pdf
+* PDF download: https://github.com/Hoyby/NTNU-TDT4120-AlgDat/README.pdf
 
 ## Teori
 1. [*Problem og algoritmer*](#of1)
@@ -22,21 +22,21 @@
 14. [*NP-komplette problemer*](#of14)
 
 
-* [Her](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Algoritmer%20i%20pensum) ligger de fleste av algoritmene som er pensum skrevet i *Python*
+* [Her](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Algoritmer%20i%20pensum) ligger de fleste av algoritmene som er pensum skrevet i *Python*
 
-* [Her](https://github.com/Hoyby/NTNU/blob/master/TDT4120-AlgDat/Algorithms.md) ligger kjøretiden på de fleste av algoritmene nevnt i dette dokumentet.
+* [Her](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Algorithms.md) ligger kjøretiden på de fleste av algoritmene nevnt i dette dokumentet.
 
 ## Liste over øvinger:
 
-- [x] [Øving 1](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_1)
-- [x] [Øving 2](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_2)
-- [x] [Øving 3](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_3)
-- [x] [Øving 4](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_4)
-- [x] [Øving 5](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_5)
-- [x] [Øving 6](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_6)
-- [x] [Øving 7](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_7)
-- [x] [Øving 8](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_8)
-- [x] [Øving 9](https://github.com/Hoyby/NTNU/tree/master/TDT4120-AlgDat/Assignment_9)
+- [x] [Øving 1](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_1)
+- [x] [Øving 2](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_2)
+- [x] [Øving 3](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_3)
+- [x] [Øving 4](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_4)
+- [x] [Øving 5](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_5)
+- [x] [Øving 6](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_6)
+- [x] [Øving 7](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_7)
+- [x] [Øving 8](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_8)
+- [x] [Øving 9](https://github.com/Hoyby/NTNU-TDT4120-AlgDat/Assignment_9)
 
 
 </br></br>
