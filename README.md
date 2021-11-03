@@ -1499,7 +1499,7 @@ For å løse det fraksjonelle problemet, må vi regne ut kiloprisen *v<sub>i</su
 Huffmann-koder komprimerer data veldig effektivt, og gir besparelser på 20-90%.
 Vi ser her på "prefix-frie koder". Når vi skal encode for binær kode, skiller vi bare mellom kodeordene som representerer karakterene i fien. 
 
-Når en skal skrive et binært tre som decoder/encoder en tekst, lager man et binærtre der bladene er gitte tegn, og kantene er nummerert med 0 eller 1. Der venstre kant er 0 og høyre kant er 1. Så når man leser fra en krypert kode, så betyr 0: Gå til venstre barn, og 1: Gå til høyre barn. 
+Når en skal skrive et binært tre som decoder/encoder en tekst, lager man et binærtre der bladene er gitte tegn, og kantene er nummerert med 0 eller 1. Der venstre kant er 0 og høyre kant er 1. Så når man leser fra en enkrypert kode, så betyr 0: Gå til venstre barn, og 1: Gå til høyre barn. 
 
 *eksempel:* vi skrive *abc* fra grafen under som 11|100|0 = 111000
 
