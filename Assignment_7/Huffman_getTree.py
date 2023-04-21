@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 I denne oppgaven får du et huffmantre og skal hente ut kodingen til de ulike tegnene.
 
 Treet er representert ved et objekt av type Node med attributter left_child og right_child for venstre og høyre barnenode. 
@@ -19,7 +19,7 @@ Hvis treet funksjonen får inn er dette:
 
 
 så skal encoding returnere {"n": "00", "b": "01", "a": "1"}.
-'''
+"""
 
 
 # def encoding(node, result = None):
@@ -48,12 +48,14 @@ så skal encoding returnere {"n": "00", "b": "01", "a": "1"}.
 
 #     return result
 
+
 def encoding(node):
     code = {}
     traverseTreeEdges(node, code)
     return code
- 
-def traverseTreeEdges(root, code, value="", string =""):
+
+
+def traverseTreeEdges(root, code, value="", string=""):
     if value == "left":
         string += "0"
     elif value == "right":
@@ -66,7 +68,6 @@ def traverseTreeEdges(root, code, value="", string =""):
         if root.character != None:
             code[root.character] = string
     return string
-    
 
 
 tests = [
@@ -770,11 +771,7 @@ class Node:
     def __str__(self):
         return (
             f'{{ "left_child": {self.left_child}, "right_child": {self.right_child}, "character": '
-            + (
-                '"' + self.character + '"'
-                if self.character is not None
-                else "None"
-            )
+            + ('"' + self.character + '"' if self.character is not None else "None")
             + "}"
         )
 

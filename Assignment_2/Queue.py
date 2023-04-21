@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 For at studentassistentene skal kunne hjelpe studentene i riktig og rettferdig rekkefølge, 
 trenger man et system som holder styr på hvem som venter på hjelp og hvilken rekkefølge disse skal få hjelp i. 
 En kø (FIFO) passer godt til dette. Implementer en slik kø ved å fylle ut koden for Queue klassen under.
@@ -11,11 +11,10 @@ I __init__ metoden kan du initialisere de interne verdiene du trenger.
 max_size argumentet til __init__ metoden sier hvor mange elementer det maksimalt kommer til å være i køen på et vilkårlig tidspunkt.
 
 Merk: Det er ikke lov til å bruke queue biblioteket, collections.deque eller andre innebygde implementasjoner av køer.
-'''
+"""
 
 
 class Queue:
-    
     def __init__(self, max_size):
         self.max_size = max_size
         self.size = 0
@@ -28,8 +27,7 @@ class Queue:
         else:
             self._queue.append(value)
             self.size += 1
-            
-    
+
     def dequeue(self):
         if self.size == 0:
             raise Exception("No elements")
@@ -38,18 +36,15 @@ class Queue:
             del self._queue[0]
             return first
 
-        
+
+# -------------------- Test --------------------
+
+# import unittest
+
+# q = Queue(3)
 
 
-
-#-------------------- Test --------------------
-
-#import unittest
-
-#q = Queue(3)
-
-
-#class Test(unittest.TestCase):
+# class Test(unittest.TestCase):
 #    def test_a(self):
 #        self.assertEqual(q._queue, [])
 #        q.enqueue(10)
@@ -65,7 +60,8 @@ class Queue:
 #        self.assertEqual(q._queue, [])
 
 
-#unittest.main()
+# unittest.main()
+
 
 def tester(values, sequence, max_size):
     """

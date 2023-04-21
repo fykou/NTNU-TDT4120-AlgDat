@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Huffmankoding brukes til å komprimere data, som kan spare en for store ressurser ved overføring og lagring av store datamengder.
 
 I denne oppgaven skal du implementere en forenklet versjon av huffmankoding. 
@@ -13,16 +13,15 @@ de ulike tegnene som finnes og verdiene er de tilsvarende binære tekststrengene
 Funksjonen skal returnere den kodede strengen som tilsvarer data.
 
 Et eksempel er om data = "nabn" og encoding = {"n": "1", "a": "00", "b": "01"}, så skal funksjonen din returnere "100011".
-'''
+"""
 
 
 def encode(data, encoding):
-    
     result = ""
 
     for letter in data:
         result += encoding.get(letter)
-    
+
     return result
 
 

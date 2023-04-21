@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-#incomplete
+# incomplete
 
-'''
+"""
 Du er i et basseng fylt med vann. Bassenget har en bunn som er flislagt med identiske kvadratiske fliser med sidelengde på 1 meter. 
 Bassenget er helt kvadratisk med nn fliser i lengden og nn fliser i bredden. Dette er likevel ikke et helt vanlig basseng, 
 fordi flisene ikke nødvendigvis ligger i samme dybde under vannflaten.
@@ -31,7 +31,7 @@ noe som gir et volum på 1m⋅1m⋅2m=2m^3.
 Hvis vi derimot har en kiste som er 1 meter høy, kan den ligge oppå alle flisene, 
 siden alle flisene ligger minst en meter under vannoverflaten. Da får vi en kiste med volum 2m⋅2m⋅1m=4m^3.
 Størrelsen på det størst mulige volumet i dette eksempelet er dermed 4m^3.
-'''
+"""
 
 
 import random
@@ -80,8 +80,7 @@ tests = [
 
 def generate_random_test_case(length, max_value):
     test_case = [
-        [random.randint(0, max_value) for i in range(length)]
-        for j in range(length)
+        [random.randint(0, max_value) for i in range(length)] for j in range(length)
     ]
     return test_case, bruteforce(test_case)
 
@@ -108,7 +107,5 @@ for i in range(20):
     test_case, answer = generate_random_test_case(random.randint(1, 3), 10)
     test_student_algorithm(test_case, answer)
 for i in range(10):
-    test_case, answer = generate_random_test_case(
-        random.randint(1, 20), 100000
-    )
+    test_case, answer = generate_random_test_case(random.randint(1, 20), 100000)
     test_student_algorithm(test_case, answer)

@@ -1,8 +1,7 @@
-
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 En unimodal liste er en liste med tall som, etter å ha blitt rotert et bestemt antall ganger, 
 kan deles i to intervaller der det første er strengt voksende og det andre strengt synkende. 
 Med rotasjon mener vi her å ta det første elementet ut av listen og sette det inn bak alle de andre elementene i listen.
@@ -11,7 +10,7 @@ Et eksempel er listen ⟨8,6,3,1,5,9,12,10⟩⟨8,6,3,1,5,9,12,10⟩. Hvis man r
 som har egenskapen at listen er først strengt voksende og deretter strengt synkende. ⟨8,6,3,1,5,9,12,10⟩⟨8,6,3,1,5,9,12,10⟩ er derfor en unimodal liste.
 
 I en slik unimodal liste er det en bestemt største verdi. Du skal skrive en algoritme som finner denne verdien i Θ(lgn)Θ(lgn)-tid.
-'''
+"""
 
 
 import random
@@ -20,36 +19,36 @@ import sys
 # De tilfeldig generete testene er like for hver gang du kjører koden.
 # Hvis du vil ha andre tilfeldig genererte tester, så endre dette nummeret.
 random.seed(123)
- 
- 
+
+
 def find_maximum(A):
     l = 0
     h = len(A) - 1
     i = 0
     while True:
-
-        if l == h: 
+        if l == h:
             return A[l]
-        
-        #len == 2 and left is biggest
-        if (h == l + 1 and A[l] >= A[h]): 
-            return A[l] 
 
-        #len == 2 and right is biggest
-        if (h == l + 1 and A[l] < A[h]): 
+        # len == 2 and left is biggest
+        if h == l + 1 and A[l] >= A[h]:
+            return A[l]
+
+        # len == 2 and right is biggest
+        if h == l + 1 and A[l] < A[h]:
             return A[h]
 
-
-        mid = (l + h)//2
-        if (A[mid] > A[mid + 1] and A[mid] > A[mid - 1]):
+        mid = (l + h) // 2
+        if A[mid] > A[mid + 1] and A[mid] > A[mid - 1]:
             return A[mid]
-        elif (A[h] < A[l] and A[mid] < A[mid + 1] and A[l] < A[mid]): #1r ok
+        elif A[h] < A[l] and A[mid] < A[mid + 1] and A[l] < A[mid]:  # 1r ok
             l = mid
-        elif A[h] < A[l] and ((A[mid] < A[mid + 1] and A[l] > A[mid]) or A[mid] > A[mid + 1]): #2l
+        elif A[h] < A[l] and (
+            (A[mid] < A[mid + 1] and A[l] > A[mid]) or A[mid] > A[mid + 1]
+        ):  # 2l
             h = mid
-        elif A[h] > A[l] and (A[mid] < A[l] or A[mid] < A[mid + 1]): #3r
+        elif A[h] > A[l] and (A[mid] < A[l] or A[mid] < A[mid + 1]):  # 3r
             l = mid
-        elif A[h] > A[l] and A[mid] > A[l] and A[mid] > A[mid + 1]: #4l
+        elif A[h] > A[l] and A[mid] > A[l] and A[mid] > A[mid + 1]:  # 4l
             h = mid
         else:
             l = mid
@@ -95,8 +94,7 @@ def test_student_maximum(test_case, answer):
             )
         else:
             response = (
-                "Find maximum' feilet på input som er "
-                + "for langt til å vises her"
+                "Find maximum' feilet på input som er " + "for langt til å vises her"
             )
         print(response)
         sys.exit()

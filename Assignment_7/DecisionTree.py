@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-#incomplete
+# incomplete
 
-'''
+"""
 Et beslutningstre er et binært tre hvor alle løvnodene er beslutninger og alle de interne nodene representerer ja-/nei-spørsmål. 
 Treet er slikt at man kan ta en situasjon, gjenstand eller lignende og traverse treet fra rotnoden til en løvnode
  ved å i hver interne node gå til det venstre barnet hvis svaret på spørsmålet er ja, og til det høyre barnet hvis svaret er nei. 
@@ -31,7 +31,7 @@ Da vil et mulig optimalt beslutningstre se ut som dette
 For dette beslutningstreet skal build_decision_tree(decisions) returnere oppslagstabellen {"a": "0", "b": "10", "c": "11"}.
 
 I situasjoner hvor det finnes mange forskjellige optimale beslutningstrær vil alle optimale beslutningstrær være gyldige svar.
-'''
+"""
 
 
 from heapq import heappush, heappop

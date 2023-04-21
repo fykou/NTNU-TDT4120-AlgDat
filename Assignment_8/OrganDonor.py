@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Et viktig problem knyttet til organdonasjon er å sikre at at donor og mottager av et organ er kompatible.
 
 En forenklet versjon av dette er at det finnes et antall attributter som representerer ulike biologiske og
@@ -23,27 +23,29 @@ Antallet attributter som må matche for at en donor og en mottager skal sees på
 
 Funksjonen skal returnere en liste donor_edges der donor_edges[i] er en liste over alle
  mottagere (gitt ved deres indeks i recipients) som donor ii-te er kompatibel med.
-'''
+"""
 
 
 def compatibility_graph(donors, recipients, k):
-    donor_edges = [] # Initialize returning list of compatible donors - recipents
+    donor_edges = []  # Initialize returning list of compatible donors - recipents
     for i in range(0, len(donors)):
         recipientIndex = -1
-        donor_edges.append([]) # Add new list for each donor
+        donor_edges.append([])  # Add new list for each donor
         for j in range(0, len(recipients)):
             recipientIndex += 1
-            count = 0 # Start new count for attributes
+            count = 0  # Start new count for attributes
             for donorAttribute in donors[i]:
-
-                if recipientIndex not in donor_edges[i] and k == 0: # If no requirement for number of matches, do:
+                if (
+                    recipientIndex not in donor_edges[i] and k == 0
+                ):  # If no requirement for number of matches, do:
                     donor_edges[i].append(recipientIndex)
-                elif donorAttribute in recipients[j]: # If matching attributes found:
+                elif donorAttribute in recipients[j]:  # If matching attributes found:
                     count += 1
                     if recipientIndex not in donor_edges[i] and count >= k:
                         donor_edges[i].append(recipientIndex)
-        
+
     return donor_edges
+
 
 # def compatibility_graph(donors, recipients, k):
 #     donor_edges = [] # Initialize returning list of compatible donors - recipents
@@ -76,7 +78,10 @@ tests = [
     (([["ab"], ["ac"]], [["ab"]], 1), [[0], []]),
     (([["ab"], ["ac"]], [["ac"], ["ab"]], 1), [[1], [0]]),
     (([["ab"], ["ac"]], [["ac"], ["ab"]], 0), [[0, 1], [0, 1]]),
-    (([["IRk", "s", "S", "9zF"], ["ac"]], [["IRk", "s", "S", "9zF"], ["ab"]], 0), [[0, 1], [0, 1]]),
+    (
+        ([["IRk", "s", "S", "9zF"], ["ac"]], [["IRk", "s", "S", "9zF"], ["ab"]], 0),
+        [[0, 1], [0, 1]],
+    ),
     (
         ([["ab", "12"], ["ac", "22"]], [["ab", "22"], ["ac", "22"]], 2),
         [[], [1]],
@@ -126,8 +131,22 @@ tests = [
     ),
     (([], [["x", "7HyQl", "Wr38", "Ww"], ["x", "7HyQl", "yq", "Ww"]], 9), []),
     (([["rX1", "z"], ["rX1", "ZY2w"]], [["qX1Ph", "7a0M"]], 1), [[], []]),
-    (([['KAy3Z', 'b'], ['KAy3Z', 'b'], ['KAy3Z', 'b']], [['KAy3Z', 'b'], ['KAy3Z', 'b']], 2), [[0, 1], [0, 1], [0, 1]]),
-    (([['a', 'b'], ['a', 'b'], ['a', 'b', 'c', 'd'], ['c', 'd', 'e']], [['a', 'b'], ['a', 'b'], ['c', 'd', 'e'], ['a'], ['a', 'c']], 2), [[0, 1], [0, 1], [0, 1, 2, 4], [2]]),
+    (
+        (
+            [["KAy3Z", "b"], ["KAy3Z", "b"], ["KAy3Z", "b"]],
+            [["KAy3Z", "b"], ["KAy3Z", "b"]],
+            2,
+        ),
+        [[0, 1], [0, 1], [0, 1]],
+    ),
+    (
+        (
+            [["a", "b"], ["a", "b"], ["a", "b", "c", "d"], ["c", "d", "e"]],
+            [["a", "b"], ["a", "b"], ["c", "d", "e"], ["a"], ["a", "c"]],
+            2,
+        ),
+        [[0, 1], [0, 1], [0, 1, 2, 4], [2]],
+    ),
 ]
 
 

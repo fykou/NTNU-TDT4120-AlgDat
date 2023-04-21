@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 En mulig anvendelse av minimale spenntrær er klyngeanalyse (engelsk clustering). 
 I klyngeanalyse ønsker vi å gruppere elementene i kk ulike klynger, 
 slik at elementene innad i en klynge er likere hverandre enn elementer utenfor klyngen. 
@@ -44,23 +44,23 @@ mens den for AGAG og CGTC er 33 og for CTTC og CGTC er den 11. I steg 2 får vi 
 samt verdiene n = 3, k = 2. Siden Hamming-avstanden mellom mus og rotter er mindre enn for noen av de andre parene,
 havner disse i samme klynge, og steg 2 returnerer listen [[0], [1, 2]]. Dette siden vi skal ha to klynger.
 I steg 3 gjøres denne listen om til [["Ugle"], ["Mus", "Rotte"]].
-'''
+"""
 
 
-def merge(l): 
+def merge(l):
     out = []
-    while len(l)>0:
+    while len(l) > 0:
         first, *rest = l
         first = set(first)
         lf = -1
-        while len(first)>lf:
+        while len(first) > lf:
             lf = len(first)
             rest2 = []
             for r in rest:
-                if len(first.intersection(set(r)))>0:
+                if len(first.intersection(set(r))) > 0:
                     first |= set(r)
                 else:
-                    rest2.append(r)     
+                    rest2.append(r)
             rest = rest2
         out.append(first)
         l = rest
@@ -97,17 +97,22 @@ def find_clusters(E, n, k):
         parent[i] = None
     edges_sorted = sorted(E, key=lambda cost: cost[2], reverse=True)
     for edge in edges_sorted:
-        if find(parent, edge[0]) != find(parent, edge[1]): # Checks if edges has same root (to prevent a cycle)
-            if list(parent.values()).count(None) == k: # Checks the number of root nodes against k
+        if find(parent, edge[0]) != find(
+            parent, edge[1]
+        ):  # Checks if edges has same root (to prevent a cycle)
+            if (
+                list(parent.values()).count(None) == k
+            ):  # Checks the number of root nodes against k
                 for key in parent:
                     if parent[key] == None:
-                        if not any(key in i for i in MSP): # Checks wether one or both of the root nodes are missing
+                        if not any(
+                            key in i for i in MSP
+                        ):  # Checks wether one or both of the root nodes are missing
                             MSP.append([key])
                 break
             union(parent, edge[0], edge[1])
-            MSP.append([edge[0], edge[1]]) # TODO: put edges in same list
+            MSP.append([edge[0], edge[1]])  # TODO: put edges in same list
     return merge(MSP)
-
 
 
 def find_animal_groups(animals, k):
@@ -121,9 +126,7 @@ def find_animal_groups(animals, k):
     clusters = find_clusters(E, len(animals), k)
 
     # Gjøre om fra klynger basert på indekser til klynger basert på dyrenavn
-    animal_clusters = [
-        [animals[i][0] for i in cluster] for cluster in clusters
-    ]
+    animal_clusters = [[animals[i][0] for i in cluster] for cluster in clusters]
     return animal_clusters
 
 
@@ -256,42 +259,41 @@ tests = [
     ),
     (
         [
-            ('aa', 'AAACTGCAGGCACCGATTTTAATGATTAACCGCGCACAGTGAC'),
-            ('ab', 'TCAAAAGAGCCTGCACCGCGGCATAGGTTCGCTGACATGAAGA'),
-            ('ac', 'GATTGGGTACGCCTTCAGATACTGCGATATGCTATCCCAAGTG'),
-            ('ad', 'CTGACACTGAAGTGAACCGTCCGCCGCAGTGGTATGCGGCGAG'),
-            ('ae', 'CCGAGGGATCCTAAAGAAGGAGCGGCTTTTCATTTGTTCGCCT'),
-            ('af', 'CTCTGATCAATGCAGCCGCGTTACTATAACACGGGGCGATTAC'),
-            ('ag', 'GTGAGGGTGAAAAGGGGTGGACCTACGACCGTTAAGTGCCTCG'),
-            ('ah', 'CTATATGCCGAACTCTAGAGATGGACAAAGTATGACATTGGAG'),
-            ('ai', 'CGCCTGCACTATTCGGGCCCAATTTTGGTATGGAGTCGTCGGT'),
-            ('aj', 'GGGCACCAAGGGATTCGCTCCTAATGGCCTAAGGGGCTCAAGT'),
-            ('ak', 'ACAGTACAGCCCCCCCCTCGATAGAGTCTGTTCAAGAGATTTA'),
-            ('al', 'GTTTGTAGTTGAAGTAATGGCGGGATAAGGTTTAGAGGAAGGG'),
-            ('am', 'TCAAGCAAATTCCAGTAGTTGAGAGAAGTACTAAAGTCTCGCC'),
-            ('an', 'GGTTAACATATTATCGGTGGTAAACCATCCGATCCCACCCGAT'),
-            ('ao', 'TCCGACCCTCTAGGCGTAATAGAGATGCACGACCTCCAGCAAT'),
-            ('ap', 'AGACGAATCTAGAGGTCCAGGCAATCAGGCATTTCCATAGCAG'),
-            ('aq', 'GGTTACGCGCTCGCATTCTGAAAAGTATTCAAGGCCAATGGGT'),
-            ('ar', 'GCGATATAAGAATTAACCCTGATTCTGGGTTTGCACGCACTCT'),
-            ('as', 'GAGGCTAATCTTTCATTGGAAGGCCAGGAGTGAGTAGGCCGCT'),
-            ('at', 'AAGTACGAAGTCCTAGTCCGTTTGATGTATGCAATCAAGGAGT'),
-            ('au', 'GCTTCGATGGTGGCCCGGGAAAGCGGCAAGAGACTTCTAAGCG'),
-            ('av', 'AGCTGCATCCGCCGGAATAGGTTTTCATCTAAGGCGAACCGTT'),
-            ('aw', 'ACACAACCGCCTACGTAGCCACCGATAAATCTGTCATATTATA'),
-            ('ax', 'CGTGCGACGATCATGCCCCTGCGCTATAGAAACCCGTCCCCTA'),
-            ('ay', 'CGACTCGATATTTGTCTGCCGGTACGGCCGGTACACCCCTATT'),
-            ('az', 'TAATAAGGTTACACTGGTGACGCAGATCCAGCCGGGCGAGCTC'),
-            ('ba', 'CAGTCGTCGCGCAGTCTTTGCCCCGCAACGGCCACCACGGCCC'),
-            ('bb', 'CGTTGCAGCGCGACAATGATTGATAAAGGAACCGATTTACCAC'),
-            ('bc', 'ACCAAGGCTTATGAGCCGCCGTGCAGTGCAGCCAGTATATTAT'),
-            ('bd', 'TACCGCGACTTAGGTTATTATTAGGAGACCTGAAGGACTAACC'),
-            ('be', 'GGGCGTGGCGGTCCAAGAACCACTAGGTCCTTGTGGGCAGTCT'),
-            ], 
-            20, 
-            26,
-),
-
+            ("aa", "AAACTGCAGGCACCGATTTTAATGATTAACCGCGCACAGTGAC"),
+            ("ab", "TCAAAAGAGCCTGCACCGCGGCATAGGTTCGCTGACATGAAGA"),
+            ("ac", "GATTGGGTACGCCTTCAGATACTGCGATATGCTATCCCAAGTG"),
+            ("ad", "CTGACACTGAAGTGAACCGTCCGCCGCAGTGGTATGCGGCGAG"),
+            ("ae", "CCGAGGGATCCTAAAGAAGGAGCGGCTTTTCATTTGTTCGCCT"),
+            ("af", "CTCTGATCAATGCAGCCGCGTTACTATAACACGGGGCGATTAC"),
+            ("ag", "GTGAGGGTGAAAAGGGGTGGACCTACGACCGTTAAGTGCCTCG"),
+            ("ah", "CTATATGCCGAACTCTAGAGATGGACAAAGTATGACATTGGAG"),
+            ("ai", "CGCCTGCACTATTCGGGCCCAATTTTGGTATGGAGTCGTCGGT"),
+            ("aj", "GGGCACCAAGGGATTCGCTCCTAATGGCCTAAGGGGCTCAAGT"),
+            ("ak", "ACAGTACAGCCCCCCCCTCGATAGAGTCTGTTCAAGAGATTTA"),
+            ("al", "GTTTGTAGTTGAAGTAATGGCGGGATAAGGTTTAGAGGAAGGG"),
+            ("am", "TCAAGCAAATTCCAGTAGTTGAGAGAAGTACTAAAGTCTCGCC"),
+            ("an", "GGTTAACATATTATCGGTGGTAAACCATCCGATCCCACCCGAT"),
+            ("ao", "TCCGACCCTCTAGGCGTAATAGAGATGCACGACCTCCAGCAAT"),
+            ("ap", "AGACGAATCTAGAGGTCCAGGCAATCAGGCATTTCCATAGCAG"),
+            ("aq", "GGTTACGCGCTCGCATTCTGAAAAGTATTCAAGGCCAATGGGT"),
+            ("ar", "GCGATATAAGAATTAACCCTGATTCTGGGTTTGCACGCACTCT"),
+            ("as", "GAGGCTAATCTTTCATTGGAAGGCCAGGAGTGAGTAGGCCGCT"),
+            ("at", "AAGTACGAAGTCCTAGTCCGTTTGATGTATGCAATCAAGGAGT"),
+            ("au", "GCTTCGATGGTGGCCCGGGAAAGCGGCAAGAGACTTCTAAGCG"),
+            ("av", "AGCTGCATCCGCCGGAATAGGTTTTCATCTAAGGCGAACCGTT"),
+            ("aw", "ACACAACCGCCTACGTAGCCACCGATAAATCTGTCATATTATA"),
+            ("ax", "CGTGCGACGATCATGCCCCTGCGCTATAGAAACCCGTCCCCTA"),
+            ("ay", "CGACTCGATATTTGTCTGCCGGTACGGCCGGTACACCCCTATT"),
+            ("az", "TAATAAGGTTACACTGGTGACGCAGATCCAGCCGGGCGAGCTC"),
+            ("ba", "CAGTCGTCGCGCAGTCTTTGCCCCGCAACGGCCACCACGGCCC"),
+            ("bb", "CGTTGCAGCGCGACAATGATTGATAAAGGAACCGATTTACCAC"),
+            ("bc", "ACCAAGGCTTATGAGCCGCCGTGCAGTGCAGCCAGTATATTAT"),
+            ("bd", "TACCGCGACTTAGGTTATTATTAGGAGACCTGAAGGACTAACC"),
+            ("be", "GGGCGTGGCGGTCCAAGAACCACTAGGTCCTTGTGGGCAGTCT"),
+        ],
+        20,
+        26,
+    ),
 ]
 
 failed = False
@@ -345,9 +347,7 @@ for animals, k, optimal in tests:
         break
 
     lookup = {
-        animal: index
-        for index, cluster in enumerate(clusters)
-        for animal in cluster
+        animal: index for index, cluster in enumerate(clusters) for animal in cluster
     }
     t = lambda x: x[0] != x[1]
     sep_dist = min(

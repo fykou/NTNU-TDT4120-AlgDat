@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-#incomplete
+# incomplete
 
-'''
+"""
 Universitetet på Pluto ønsker også å sortere lister over studenter i leksikalsk rekkefølge. 
 Det vil si slik at for eksempel «a» kommer før «b» og «aab» kommer før «ab», men etter «aa». 
 Plutonske navn fungerer ikke slik som i Norge, og kan både være veldig korte (for eksempel «a»)eller veldig lange (mange tusener av tegn). 
@@ -13,17 +13,20 @@ en funksjon av den maksimale lengden til et navn. Plutonske navn kan også kun i
 Implementer en variant av RADIX-SORTRADIX-SORT som sorterer et sett med plutonske navn i leksikalsk rekkefølge.
 Metoden skal ta inn en liste, A, og den maksimale lengden, k, et navn kan ha. 
 Sorteringen må gå i lineær tid basert på den totale lengden til alle strengene.
-'''
+"""
 
 
 def char_to_int(char):
     return ord(char) - 97
 
-BASE = 26   # Tallsystem (26): 0:a, 1:b ... 25:z
 
-def flexradix(A,index):
+BASE = 26  # Tallsystem (26): 0:a, 1:b ... 25:z
+
+
+def flexradix(A, index):
     # Dersom lengden av A er mindre eller lik 1, returnerer jeg A
-    if len(A)<2:return A
+    if len(A) < 2:
+        return A
 
     result = []
     # Lager 26 heaps
@@ -34,22 +37,21 @@ def flexradix(A,index):
             result.append(string)
         else:
             # Legger strengen til i en heap med tilhørende verdi(0-25) fra string[index] sin ASCII-verdi minus ASCII-verdien til 'a'
-            heaps[ord(string[index]) - ord('a')].append(string)
+            heaps[ord(string[index]) - ord("a")].append(string)
     # Setter listen med hauger til å være en liste av ett nytt flexradix-kall på alle haugene
-    heaps = [flexradix(heap, index+1) for heap in heaps]
+    heaps = [flexradix(heap, index + 1) for heap in heaps]
 
     # Legger til alle de resterende strengene i resultatlista med en dobbel for-løkke
     return result + [string for heap in heaps for string in heap]
 
 
-
 # def counting_sort(A):
-#     B = [] 
+#     B = []
 #     k = 2048
 
 #     # Create empty list
 #     C = [0] * k
-    
+
 #     # Store count of each number
 #     for j in A:
 #         C[j] += 1

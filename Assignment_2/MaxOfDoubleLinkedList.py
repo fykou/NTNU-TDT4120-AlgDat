@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Finn det elementet med den høyeste veriden i en dobbelt linket liste.
-'''
+"""
 
 
 class NodeDoublyLinked:
@@ -12,17 +12,18 @@ class NodeDoublyLinked:
         self.next = next_
         self.value = value
 
+
 def maxOfDoubleLinkedList(linkedlist):
     start = linkedlist
     result = linkedlist.value
     if start.next != None:
         while linkedlist.next != None:
             if linkedlist.next.value > result:
-                result = linkedlist.next.value 
+                result = linkedlist.next.value
             else:
                 result = result
             linkedlist = linkedlist.next
-    
+
     if start.prev != None:
         linkedlist = start
         while linkedlist.prev != None:
@@ -35,7 +36,7 @@ def maxOfDoubleLinkedList(linkedlist):
     return result
 
 
-#-------------------- Test --------------------
+# -------------------- Test --------------------
 
 import unittest
 
@@ -43,10 +44,12 @@ n3 = NodeDoublyLinked(None, None, 100)
 n2 = NodeDoublyLinked(None, n3, 10)
 n1 = NodeDoublyLinked(None, n2, 1)
 
+
 class Test(unittest.TestCase):
     def testset(self):
         self.assertEqual(maxOfDoubleLinkedList(n1), 100)
         self.assertEqual(maxOfDoubleLinkedList(n2), 100)
         self.assertEqual(maxOfDoubleLinkedList(n3), 100)
+
 
 unittest.main()

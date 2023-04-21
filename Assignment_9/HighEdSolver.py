@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Høyere utdanning har i Norge vært preget av flere fusjoner de siste årene. Dette kan fort bli problematisk å holde orden på, 
 så derfor trenger vi din hjelp.
 
@@ -32,13 +32,12 @@ parent_institution("UniA") skal returnere "UniAogB" siden det er det institusjon
 parent_institution("UniAogB") skal returnere "UniAogB" siden denne institusjonen ikke ligger under en annen institusjon.
 fuse("UniAogB", "UniC", "UniABC")
 parent_institution("UniB") skal returnere "UniABC" siden det er det institusjonen ligger under etter sammenslåingene.
-'''
+"""
 
 
 class HigherEdSolver:
     def initialize(self, institutions):
         self.dict = {inst: inst for inst in institutions}
-
 
     def parent_institution(self, institution):
         if self.dict[institution] != institution:

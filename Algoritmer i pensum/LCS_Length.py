@@ -42,7 +42,7 @@ def print_LCS(b, X, i, j):
 
 def main():
     X = list("ALLLELX")
-    Y = list("ALEX")
+    Y = list("")
 
     i = len(X)-1
     j = len(Y)-1

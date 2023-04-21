@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Vi ønsker å sortere en liste med nn tall, men har veldig liten plass i minnet til datamaskinen vår. 
 Vi har kun plass til to av tallene i minnet av gangen, og må ellers ha verdiene lagret på et eksternt medium. 
 Maskinen vår har 3 eksterne mediumer (disker) som oppfører seg som stakker. 
@@ -17,14 +17,13 @@ push(x) - Plasserer xx på toppen stakken.
 pop() - Fjerner det øverste elementet i stakken og returnerer dette elementet.
 empty() - Returnerer True hvis stakken er tom, ellers False.
 peek() - Returnerer det øverste elementet i stakken uten å fjerne dette fra stakken.
-'''
+"""
 
 
 def sort(stack1, stack2, stack3):
-
     while not stack1.empty():
         el1 = stack1.pop()
-        
+
         if stack2.empty():
             stack2.push(el1)
             el1 = stack1.pop()
@@ -48,8 +47,6 @@ def sort(stack1, stack2, stack3):
 
     while not stack2.empty():
         stack1.push(stack2.pop())
-    
-
 
 
 """ class Counter:

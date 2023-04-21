@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Har du noen gang trengt å installere pakker med hjelp av et pakkesystem?
  En «pakke» er her programvare som installeres på datamaskinen. 
  Python har for eksempel pakkesystemet «pip» som sin standard. 
@@ -26,7 +26,7 @@ men det er to regler resolve_and_install må følge når den kaller install(pack
 
 package kan ikke allerede være installert.
 Alle pakkene som package er avhengig av må være installerte.
-'''
+"""
 
 
 import random
@@ -34,7 +34,6 @@ import string
 
 
 def resolve_and_install(package):
-
     if not package.is_installed:
         for dep in package.dependencies:
             resolve_and_install(dep)

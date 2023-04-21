@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Returner verdien til elementet på den gitte indexen I en linket liste.
-'''
+"""
 
 
 import random
+
 
 class Node:
     def __init__(self, next_, value_):
@@ -29,23 +30,23 @@ def findIndexInList(linkedlist, index):
 
     if index == 1:
         return result.value
-    
+
     for i in range(1, index):
         result = result.next
         if result == None:
             return -1
-    
+
     return result.value
 
 
-
-#-------------------- Test --------------------
+# -------------------- Test --------------------
 
 import unittest
 
 n3 = Node(None, 100)
 n2 = Node(n3, 10)
 n1 = Node(n2, 1)
+
 
 class Test(unittest.TestCase):
     def testset(self):
@@ -54,5 +55,6 @@ class Test(unittest.TestCase):
         self.assertEqual(findIndexInList(n1, 3), 100)
         self.assertEqual(findIndexInList(n1, 4), -1)
         self.assertEqual(findIndexInList(n1, 50), -1)
+
 
 unittest.main()

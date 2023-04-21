@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Trær har mange praktiske anvendelser. En av anvendelsene er å analysere lange strenger. 
 Dette gjelder spesielt når det kommer til genanalyse, siden DNA er veldig langt, 
 og man trenger derfor raske algoritmer for å gjøre slike analyser mulig.
@@ -24,7 +24,7 @@ Treet kan se ut som følgende. Her ser vi at det finnes 1 forekomst av DNA-sekve
 Din oppgave er å implementere funksjonen search_tree(root, dna). 
 root er Node-objektet i roten av treet, mens dna er tekststrengen (altså DNA-sekvensen) du skal søke etter. 
 Funksjonen skal returnere hvor mange forekomster det er i databasen av denne strengen.
-'''
+"""
 
 
 class Node:
@@ -35,9 +35,7 @@ class Node:
     def __str__(self):
         return (
             f"{{count: {self.count}, children: {{"
-            + ", ".join(
-                [f"'{c}': {node}" for c, node in self.children.items()]
-            )
+            + ", ".join([f"'{c}': {node}" for c, node in self.children.items()])
             + "}}"
         )
 
@@ -106,22 +104,22 @@ class Node:
         count += search_tree(node, ''.join(dnaList))    #increase count by doing same function over with one less letter in the dna string
     return count"""
 
-def search_tree(root, dna): #v3
+
+def search_tree(root, dna):  # v3
     dnaList = []
     for ch in dna:
         dnaList.append(ch)
-    
+
     for dna in dnaList:
         if dna not in root.children.keys():
             return 0
         root = root.children[dna]
-        
+
     return root.count
 
 
-
-
-tests = [   (("{count: 1, children: {}}", ""), 1),
+tests = [
+    (("{count: 1, children: {}}", ""), 1),
     (("{count: 0, children: {}}", ""), 0),
     (("{count: 1, children: {}}", "A"), 0),
     (("{count: 2000, children: {}}", ""), 2000),

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Gitt en følge av tall, S=⟨s1,s2,…,sn⟩, ønsker vi å finne den lengste strengt synkende delfølgen (eller delsekvensen, subsequence) av SS. 
 Vi ønsker å finne en slik S∗=⟨s∗1,s∗2,…,s∗k⟩ hvor kk er størst mulig.
 
@@ -18,21 +18,21 @@ Det er mulig å løse problemet med både memoisering og iterasjon, men det kan 
 
 Implementer funksjonen longest_decreasing_subsequence(s) som tar inn en følge, S, 
 og returnerer den lengste strengt synkende delfølgen i S. Er det flere slike delfølger kan du returnere hvilken som helst av disse.
-'''
+"""
 
 
 def longest_decreasing_subsequence(s):
-    #List containing lists with same lenght as s
+    # List containing lists with same lenght as s
     LDS = [[] for i in range(len(s))]
-    #Set fist element
+    # Set fist element
     LDS[0].append(s[0])
 
     for i in range(1, len(s)):
         for j in range(i):
-            #find LDS that ends with s[j], but s[j] > s[i]
+            # find LDS that ends with s[j], but s[j] > s[i]
             if s[j] > s[i] and len(LDS[j]) > len(LDS[i]):
                 LDS[i] = LDS[j].copy()
-        
+
         LDS[i].append(s[i])
 
     j = 0

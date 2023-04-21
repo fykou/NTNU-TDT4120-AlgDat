@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-#incomplete
+# incomplete
 
-'''
+"""
 Ofte trenger man å kunne skalere bilder slik at de får plass på mindre skjermer. 
 I denne oppgaven skal du implementere en metode for akkurat dette. 
 Denne metoden kalles sømfjerning (seam carving) og går ut på å fjerne stier av piksler slik at minst mulig informasjon forsvinner fra bildet. 
@@ -30,7 +30,7 @@ hvor rad_i er en liste av vektene i rad ii. Funksjonen skal returnere en liste a
 Hver piksel skal representeres ved som et tuppel (x, y), der x er kolonnen pikselen ligger i og y er raden pikselen ligger på, 
 begge 0-indeksert. For eksemplet i figuren over, så skulle funksjonen ha returnert [(0, 0), (1, 1), (0, 2), (0, 3)]. 
 Finnes det flere stier som har samme minste vekt, kan du velge hvilken du vil returnere.
-'''
+"""
 
 
 def find_path(weights):

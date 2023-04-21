@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
 #incomplete
 

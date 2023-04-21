@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Ved universitetet på Pluto har hvert emne sin egen karakterskala. For et gitt emne består karakterskalaen av alle heltall ii, 
 slik at 0⩽i⩽k0⩽i⩽k. Administrasjonen ved universitetet ønsker å sortere karakterene i emnene, 
 slik at de lettere kan utføre statistiske utregninger. 
@@ -11,7 +11,7 @@ de vet kun at denne verdien alltid er slik at k<2048k<2048.
 Implementer en variant av COUNTING-SORTCOUNTING-SORT som ikke tar inn kk, 
 men som alltid vil kunne sortere en liste av karakterer i et emne ved universitetet på Pluto. 
 Metoden skal skrive resultatet til BB, som har lik lengde som AA.
-'''
+"""
 
 
 def counting_sort(A, B):
@@ -19,7 +19,7 @@ def counting_sort(A, B):
 
     # Create empty list
     C = [0] * k
-    
+
     # Store count of each number
     for j in A:
         C[j] += 1
@@ -27,7 +27,6 @@ def counting_sort(A, B):
     # Cumulate C over the array
     for i in range(1, len(C)):
         C[i] += C[i - 1]
-
 
     # Add to output array
     for i in range(len(A) - 1, -1, -1):

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-#incomplete
+# incomplete
 
-'''
+"""
 SMT-solvere brukes ofte til å sjekke at programmer fungerer som de skal, og for å hindre sikkerhetshull. 
 SMT-solvere brukes blant annet mye i symbolsk evaluering. 
 Et vanlig komponent i en SMT-solver er en teori-solver som har som oppgave å sjekke kandidatløsninger.
@@ -18,18 +18,19 @@ Parameteren constraints er en liste med tupler på formen (a, comp, b) der a og 
 fra variables og comp kan være "=", "<" eller ">", som representerer henholdsvis at a=ba=b, a<ba<b eller a>ba>b. 
 Funksjonen skal returnere True om det er mulig å gi variablene i variables tallverdier som overholder 
 restriksjonene i constraints og False ellers.
-'''
+"""
+
+
 class Graph:
- 
     def __init__(self, vertices):
         self.nodes = vertices
- 
+
     # uses path compression
     def find(self, parent, vertex):
         if parent[vertex] == None:
             return vertex
         return self.find(parent, parent[vertex])
- 
+
     def union(self, parent, root1, root2):
         parent[root1] = root2
 
@@ -41,9 +42,6 @@ class Graph:
         else:
             equal[v1] = v1, v2
 
-
-
- 
     def KruskalMST(self, E, n):
         parent = dict()
         equal = dict()
@@ -52,7 +50,6 @@ class Graph:
             parent[node] = None
 
         for edge in E:
-
             x = edge[0]
             y = edge[1]
 
@@ -69,13 +66,11 @@ class Graph:
             if xroot != yroot:
                 if len(edge) == 3:
                     self.merge(equal, x, y)
-                else: 
+                else:
                     self.union(parent, x, y)
 
             elif x == y:
                 raise Exception
-
-
 
 
 def check(variables, constraints):
@@ -87,13 +82,13 @@ def check(variables, constraints):
         var2 = pred[2]
 
         if op == "=":
-                E.append((var1, var2, "equal")) # Include equal tag for merge
-                length -= 1
+            E.append((var1, var2, "equal"))  # Include equal tag for merge
+            length -= 1
         elif op == ">":
-                E.append((var1, var2)) # var1 > var2
+            E.append((var1, var2))  # var1 > var2
         elif op == "<":
-                E.append((var2, var1)) # var1 < var2
-        
+            E.append((var2, var1))  # var1 < var2
+
     g = Graph(length)
     print(E)
     try:
@@ -101,9 +96,9 @@ def check(variables, constraints):
     except Exception:
         print("An exeption occured")
         return False
-    
+
     return True
- 
+
 
 tests = [
     # ((["x1"], []), True),

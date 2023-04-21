@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-__author__ = "Alex Høyby"
+__author__ = "Hoyby"
 
-'''
+"""
 Du har nå implementert tresøket, men trenger også et tre å søke i.
 
 Du skal lage funksjonen build_tree(dna_sequences) som bygger et søketre (bestående av Node-objekter). 
@@ -9,7 +9,7 @@ Input er en liste av strenger som treet skal bestå av. Funksjonen skal returner
 Et tomt Node-objekt med count = 0 og children = {} kan lages ved å kalle Node().
 
 Hvis du får inn ["A", "AG", "TG", "T", "TG", "", "AT"] som liste med strenger, så skal algoritmen din lage det følgende treet:
-'''
+"""
 
 
 class Node:
@@ -21,9 +21,7 @@ class Node:
     def __str__(self):
         return (
             f"{{count: {self.count}, children: {{"
-            + ", ".join(
-                [f"'{c}': {node}" for c, node in self.children.items()]
-            )
+            + ", ".join([f"'{c}': {node}" for c, node in self.children.items()])
             + "}}"
         )
 
@@ -127,14 +125,13 @@ tests = [
 def build_tree(dna_sequences):
     root = Node()
     for dnaStrings in dna_sequences:
-       
         currentNode = root
-        for dna in dnaStrings: #more than 1 letter
+        for dna in dnaStrings:  # more than 1 letter
             if dna not in currentNode.children.keys():
                 currentNode.children[dna] = Node()
             currentNode = currentNode.children[dna]
-                
-        currentNode.count += 1  
+
+        currentNode.count += 1
 
     return root
 
